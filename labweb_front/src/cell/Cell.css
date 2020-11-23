@@ -1,0 +1,25 @@
+.Cell {
+    width: 15vmin;
+    height: 15vmin;
+
+    text-align: center;
+    font-size: 8vmin;
+    color: #E6E8E6;
+
+    border-radius: 5vmin;
+    border-style: solid;
+    border-color: #E6E8E6;
+    border-width: 1vmin;
+}
+
+.Cell:focus{
+    outline: none;
+}
+
+.FilledCell {
+    background-color: #F15025;
+}
+
+.EmptyCell {
+    background-color: #E6E8E6;
+}
