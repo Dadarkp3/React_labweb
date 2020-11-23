@@ -2,6 +2,6 @@
 
 ![](example.png)
 
-Projeto simples de site estático para estudo de React. [Live demo](8-puzzle.netlify.app).
+Projeto simples de site estático para estudo de React. [Live demo](https://8-puzzle.netlify.app).
 
 ---
