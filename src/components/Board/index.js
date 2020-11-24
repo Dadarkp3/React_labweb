@@ -10,13 +10,11 @@ import Button from '../Button';
 
 // Helpers
 import { shuffle } from '../../helpers/helpers';
+import { winnerConfiguration, boardSize } from '../../helpers/configs';
 
 const Board = () => {
   const [boardState, setBoardState] = useState(shuffle());
   const [pontuation, setPontuation] = useState(0);
-
-  const winnerConfiguration = [1, 2, 3, 4, 5, 6, 7, 8, 0];
-  const boardSize = 3;
 
   function checkEndOFGame(boardState) {
     var winner = true;
@@ -64,7 +62,6 @@ const Board = () => {
   };
 
   const moveCell = ({ value, position }) => {
-    console.log(value, position);
     if (value === 0) {
       return;
     }
