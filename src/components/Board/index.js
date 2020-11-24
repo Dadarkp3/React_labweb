@@ -148,6 +148,7 @@ class Board extends React.Component {
                 callback={() =>
                   this.setState({
                     ...initialState,
+                    boardState: shuffle(),
                   })
                 }
               />
