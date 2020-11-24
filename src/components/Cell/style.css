@@ -1,25 +1,29 @@
 .Cell {
-    width: 15vmin;
-    height: 15vmin;
+  width: 15vmin;
+  height: 15vmin;
 
-    text-align: center;
-    font-size: 8vmin;
-    color: #E6E8E6;
+  text-align: center;
+  font-size: 8vmin;
+  color: #e6e8e6;
 
-    border-radius: 5vmin;
-    border-style: solid;
-    border-color: #E6E8E6;
-    border-width: 1vmin;
+  border-radius: 5vmin;
+  border-style: solid;
+  border-color: #e6e8e6;
+  border-width: 1vmin;
 }
 
-.Cell:focus{
-    outline: none;
+.Cell:focus {
+  outline: none;
 }
 
 .FilledCell {
-    background-color: #F15025;
+  background-color: #f15025;
 }
 
 .EmptyCell {
-    background-color: #E6E8E6;
+  background-color: #e6e8e6;
+}
+
+.board-game .col {
+  flex: 1 1 33%;
 }

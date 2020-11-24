@@ -1,24 +1,25 @@
 import React from 'react';
 import './style.css';
 
+//Componentes
+import { Col } from 'react-bootstrap';
+
 //props.value, props.click, props.position
 
-export default (props) => {
+const Cell = ({ value, callback, position }) => {
   let classes = 'Cell ';
-  if (props.value === 0) {
+  if (value === 0) {
     classes += 'EmptyCell';
   } else {
     classes += 'FilledCell';
   }
   return (
-    <button
-      className={classes}
-      onClick={(e) =>
-        props.click &&
-        props.click({ value: props.value, position: props.position })
-      }
-    >
-      {props.value}
-    </button>
+    <Col className='noPadding'>
+      <button className={classes} onClick={callback}>
+        {value}
+      </button>
+    </Col>
   );
 };
+
+export default Cell;

@@ -1,15 +1,24 @@
 .Board {
-    display: table;
-    margin: 5% auto;
+  display: table;
+  margin: 5% auto;
 }
 
 div.noPadding {
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.win-game{
-    font-size: 50px;
-    padding: 2rem;
-    color: #F15025;
+.win-game {
+  font-size: 50px;
+  padding: 2rem;
+  color: #f15025;
+}
+
+.board-game {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px !important;
+  min-width: 300px !important;
 }
