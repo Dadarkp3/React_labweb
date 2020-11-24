@@ -12,7 +12,7 @@ import Button from '../Button';
 import { shuffle } from '../../helpers/helpers';
 
 const initialState = {
-  boardState: shuffle(),
+  boardState: shuffle,
   pontuation: 0,
 };
 
@@ -148,7 +148,6 @@ class Board extends React.Component {
                 callback={() =>
                   this.setState({
                     ...initialState,
-                    boardState: shuffle(),
                   })
                 }
               />
