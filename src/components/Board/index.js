@@ -128,7 +128,7 @@ class Board extends React.Component {
           <Row>
             <Col>
               <Button
-                title='Restart'
+                text='Restart'
                 callback={() => this.setState({ ...initialState })}
               />
             </Col>
