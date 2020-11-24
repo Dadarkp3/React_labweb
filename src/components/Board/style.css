@@ -7,3 +7,9 @@ div.noPadding {
     padding-left: 0;
     padding-right: 0;
 }
+
+.win-game{
+    font-size: 50px;
+    padding: 2rem;
+    color: #F15025;
+}

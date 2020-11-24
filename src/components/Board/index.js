@@ -8,6 +8,14 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Cell from '../Cell';
 import Button from '../Button';
 
+// Helpers
+import { shuffle } from '../../helpers/helpers';
+
+const initialState = {
+  boardState: shuffle(),
+  pontuation: 0,
+};
+
 const winnerConfiguration = [1, 2, 3, 4, 5, 6, 7, 8, 0];
 const boardSize = 3;
 
@@ -15,8 +23,7 @@ class Board extends React.Component {
   constructor() {
     super();
     this.state = {
-      boardState: this.shuffle([1, 2, 3, 4, 5, 6, 7, 0, 8]),
-      pontuation: 0,
+      ...initialState,
     };
     this.moveCell = this.moveCell.bind(this);
     this.clearMemory = this.clearMemory.bind(this);
@@ -32,8 +39,9 @@ class Board extends React.Component {
       }
     }
     if (winner) {
-      console.log('ganhou');
+      return true;
     }
+    return false;
   }
 
   clearMemory() {}
@@ -99,26 +107,6 @@ class Board extends React.Component {
     );
   }
 
-  shuffle(array) {
-    var currentIndex = array.length,
-      temporaryValue,
-      randomIndex;
-
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-  }
-
   render() {
     return (
       <div className='Board'>
@@ -128,29 +116,38 @@ class Board extends React.Component {
               <h2>Score: {this.state.pontuation}</h2>
             </Col>
           </Row>
-          <Row>
-            {this.renderCell(0)}
-            {this.renderCell(1)}
-            {this.renderCell(2)}
-          </Row>
-          <Row>
-            {this.renderCell(3)}
-            {this.renderCell(4)}
-            {this.renderCell(5)}
-          </Row>
-          <Row>
-            {this.renderCell(6)}
-            {this.renderCell(7)}
-            {this.renderCell(8)}
-          </Row>
+        </Container>
+        <Container>
+          {!this.checkEndOFGame(this.state.boardState) ? (
+            <>
+              <Row>
+                {this.renderCell(0)}
+                {this.renderCell(1)}
+                {this.renderCell(2)}
+              </Row>
+              <Row>
+                {this.renderCell(3)}
+                {this.renderCell(4)}
+                {this.renderCell(5)}
+              </Row>
+              <Row>
+                {this.renderCell(6)}
+                {this.renderCell(7)}
+                {this.renderCell(8)}
+              </Row>
+            </>
+          ) : (
+            <Row className='win-game'>You Win!</Row>
+          )}
+        </Container>
+        <Container>
           <Row>
             <Col>
               <Button
                 text='Restart'
                 callback={() =>
                   this.setState({
-                    boardState: this.shuffle([1, 2, 3, 4, 5, 6, 7, 0, 8]),
-                    pontuation: 0,
+                    ...initialState,
                   })
                 }
               />
