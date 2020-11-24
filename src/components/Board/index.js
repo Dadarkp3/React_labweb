@@ -16,7 +16,7 @@ const Board = () => {
   const [boardState, setBoardState] = useState(shuffle());
   const [pontuation, setPontuation] = useState(0);
 
-  function checkEndOFGame(boardState) {
+  const checkEndOFGame = (boardState) => {
     var winner = true;
     for (var i = 0; i < boardSize * boardSize; i++) {
       if (boardState[i] !== winnerConfiguration[i]) {
@@ -27,7 +27,7 @@ const Board = () => {
       return true;
     }
     return false;
-  }
+  };
 
   const findBlankPosition = (actualPosition) => {
     var blankPosition = -1;
